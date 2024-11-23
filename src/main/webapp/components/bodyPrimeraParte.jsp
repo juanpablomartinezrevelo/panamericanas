@@ -104,8 +104,8 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Acciones:</h6>
                         <a class="collapse-item" href="SvGerente">Ver Gerentes</a>
-                        <a class="collapse-item" href="SvAlmacenista">Ver Almacenistas</a>
                         <a class="collapse-item" href="registrarGerente.jsp">Registrar Gerente</a>
+                        <a class="collapse-item" href="SvAlmacenista">Ver Almacenistas</a>
                         <a class="collapse-item" href="registrarAlmacenista.jsp">Registrar Almacenistas</a>
                     </div>
                 </div>

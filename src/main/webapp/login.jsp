@@ -47,7 +47,7 @@
                                         <div class="text-center">
                                             <h1 class="h4 text-gray-900 mb-4">Iniciar Sesion</h1>
                                         </div>
-                                        <form class="user" action="SvLogin" method="POST">
+                                        <form class="user" action="SvLogin" method="POST" onsubmit="return validarFormulario()">
                                             <div class="form-group">
                                                 <input  class="form-control form-control-user"
                                                        id="usuario" name="usuario" 
@@ -90,4 +90,33 @@
         <script src="js/sb-admin-2.min.js"></script>
 
     </body>
+    <script>
+    function validarFormulario() {
+        // Obtener valores de los campos
+        const usuario = document.getElementById('usuario').value.trim();
+        const contrasenia = document.getElementById('contrasenia').value.trim();
+        
+        // Verificar campos vacíos
+        if (!usuario || !contrasenia) {
+            alert('Por favor, complete todos los campos.');
+            return false; // Evita el envío del formulario
+        }
+        
+        // Validar formato del correo electrónico
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(correoElectronico)) {
+            alert('Por favor, ingrese un correo electrónico válido.');
+            return false;
+        }
+
+        // Validar que el número de celular tenga solo dígitos
+        if (!/^\d+$/.test(celular)) {
+            alert('Por favor, ingrese un número de celular válido.');
+            return false;
+        }
+        
+        // Si todo está correcto, permitir envío
+        return true;
+    }
+    </script>
 </html>

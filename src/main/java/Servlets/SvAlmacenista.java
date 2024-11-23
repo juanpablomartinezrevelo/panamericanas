@@ -33,12 +33,18 @@ public class SvAlmacenista extends HttpServlet {
         
         listaAlmacenista = control.getAlmacenista();
         
+        if (listaAlmacenista.isEmpty()) {
+        // Redirigir a una página específica si la lista está vacía
+        response.sendRedirect("paginaSinDatos.jsp");
+        } else {
+        // Guardar la lista en la sesión
         HttpSession misession = request.getSession();
         misession.setAttribute("listaAlmacenista", listaAlmacenista);
-        
-        System.out.println("lista de materiales: " + listaAlmacenista.get(0));
-        
+
+        // Continuar con la redirección normal
         response.sendRedirect("verAlmacenista.jsp");
+        }
+        
     }
 
     

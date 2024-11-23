@@ -32,12 +32,19 @@ public class SvProveedor extends HttpServlet {
         
         listaProveedor = control.getProveedor();
         
+        if (listaProveedor.isEmpty()) {
+        // Redirigir a una página específica si la lista está vacía
+        response.sendRedirect("paginaSinDatosProveedor.jsp");
+        } else {
+        // Guardar la lista en la sesión
         HttpSession misession = request.getSession();
         misession.setAttribute("listaProveedor", listaProveedor);
-        
-        System.out.println("lista de materiales: " + listaProveedor.get(0));
-        
+
+        // Continuar con la redirección normal
         response.sendRedirect("verProveedor.jsp");
+        }
+        
+        
     }
 
     

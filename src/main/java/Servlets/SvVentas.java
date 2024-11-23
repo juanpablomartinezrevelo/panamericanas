@@ -34,12 +34,19 @@ public class SvVentas extends HttpServlet {
         
         listaVentas = control.getVentas();
         
+        if (listaVentas.isEmpty()) {
+        // Redirigir a una página específica si la lista está vacía
+        response.sendRedirect("paginaSinDatosVentas.jsp");
+        } else {
+        // Guardar la lista en la sesión
         HttpSession misession = request.getSession();
         misession.setAttribute("listaVentas", listaVentas);
-        
-        System.out.println("lista de Ventas: " + listaVentas.get(0));
-        
+
+        // Continuar con la redirección normal
         response.sendRedirect("verVentas.jsp");
+        }
+        
+        
     }
 
     

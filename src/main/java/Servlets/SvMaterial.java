@@ -31,12 +31,19 @@ public class SvMaterial extends HttpServlet {
         
         listaMateriales = control.getMateriales();
         
+        if (listaMateriales.isEmpty()) {
+        // Redirigir a una página específica si la lista está vacía
+        response.sendRedirect("paginaSinDatosMaterial.jsp");
+        } else {
+        // Guardar la lista en la sesión
         HttpSession misession = request.getSession();
         misession.setAttribute("listaMateriales", listaMateriales);
-        
-        System.out.println("lista de materiales: " + listaMateriales.get(0));
-        
+
+        // Continuar con la redirección normal
         response.sendRedirect("verMaterial.jsp");
+        }
+        
+        
     }
 
     

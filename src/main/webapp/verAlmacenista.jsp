@@ -50,7 +50,7 @@
                      <%
                       List<Almacenista> listaAlmacenista = (List)request.getSession().getAttribute("listaAlmacenista");
                      %>
-                     <tbody>
+                     
                         <% for(Almacenista almacenista:listaAlmacenista){%> 
                          <tr>
                              <td><%=almacenista.getId()%></td>

@@ -33,12 +33,19 @@ public class SvGerente extends HttpServlet {
         
         listaGerente = control.getGerente();
         
+        
+        if (listaGerente.isEmpty()) {
+        // Redirigir a una página específica si la lista está vacía
+        response.sendRedirect("paginaSinDatosGerente.jsp");
+        } else {
+        // Guardar la lista en la sesión
         HttpSession misession = request.getSession();
         misession.setAttribute("listaGerente", listaGerente);
-        
-        System.out.println("lista de materiales: " + listaGerente.get(0));
-        
+
+        // Continuar con la redirección normal
         response.sendRedirect("verGerente.jsp");
+        }
+        
     }
 
     

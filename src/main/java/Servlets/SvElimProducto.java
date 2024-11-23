@@ -34,7 +34,7 @@ public class SvElimProducto extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         
         control.borrarProducto(id);
-        response.sendRedirect("SvProveedor");
+        response.sendRedirect("SvProducto");
     }
 
     

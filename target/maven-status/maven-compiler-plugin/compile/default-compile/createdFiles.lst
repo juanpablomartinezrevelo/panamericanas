@@ -1,3 +1,4 @@
+Tests\test.class
 Servlets\SvEditProducto.class
 Servlets\SvMaterial.class
 Servlets\SvLogin.class

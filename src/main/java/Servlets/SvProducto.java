@@ -33,12 +33,19 @@ public class SvProducto extends HttpServlet {
         
         listaProducto = control.getProducto();
         
+        if (listaProducto.isEmpty()) {
+        // Redirigir a una página específica si la lista está vacía
+        response.sendRedirect("paginaSinDatosProducto.jsp");
+        } else {
+        // Guardar la lista en la sesión
         HttpSession misession = request.getSession();
         misession.setAttribute("listaProducto", listaProducto);
-        
-        System.out.println("lista de materiales: " + listaProducto.get(0));
-        
+
+        // Continuar con la redirección normal
         response.sendRedirect("verProducto.jsp");
+        }
+        
+        
          
     }
 
