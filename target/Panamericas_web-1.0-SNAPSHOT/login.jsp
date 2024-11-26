@@ -59,7 +59,7 @@
                                             </div>
                                             
                                             
-                                            <button type="submit" class="btn btn-primary btn-user btn-block">
+                                            <button type="submit" id="login" class="btn btn-primary btn-user btn-block">
                                                 Ingresar
                                             </button>
                                             <hr>
@@ -90,7 +90,7 @@
         <script src="js/sb-admin-2.min.js"></script>
 
     </body>
-    <script>
+    <!--<script>
     function validarFormulario() {
         // Obtener valores de los campos
         const usuario = document.getElementById('usuario').value.trim();
@@ -118,5 +118,5 @@
         // Si todo está correcto, permitir envío
         return true;
     }
-    </script>
+    </script>-->
 </html>

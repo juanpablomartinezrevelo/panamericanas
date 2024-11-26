@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: Testlogin
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 14.94 s <<< FAILURE! -- in Testlogin
+Testlogin.testCredenciales -- Time elapsed: 14.91 s <<< ERROR!
+java.lang.IllegalMonitorStateException: current thread is not owner
+	at java.base/java.lang.Object.wait0(Native Method)
+	at java.base/java.lang.Object.wait(Object.java:366)
+	at java.base/java.lang.Object.wait(Object.java:339)
+	at Testlogin.tearDown(Testlogin.java:69)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+
